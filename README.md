@@ -1,2 +1,2 @@
 # product-card
-Create new repository
+Edit README.md
