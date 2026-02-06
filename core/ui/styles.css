@@ -1,0 +1,70 @@
+body {
+    font-family: Montserrat;
+    background-image: url('/assets/images/bg_palm_trees@1x.png');
+    background-repeat: no-repeat;
+    background-size: 790px 697px;
+    background-position: 25% top;
+    color: #515076;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: top;
+    margin: 0;
+    padding-top: 220px;
+    min-height: 100vh;
+}
+
+.title {
+    font-size: 70px;
+    margin-bottom: 110px;
+}
+
+.product-cart-wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 45px;
+    min-width: 400px;
+    margin: 0 auto;
+    flex-direction: row;
+}
+
+.product-cart {
+    display: flex;
+    flex-direction: column;
+    background-color: #F7F7FA;
+    font-size: 13px;
+    min-height: 523px;
+    max-width: 290px;
+    padding: 25px;
+}
+
+.product-cart__image {
+    height: 245px;  
+    width: 290px;
+}
+
+.product-cart_type-skin {
+    color: #A5A3B9;
+    font-size: 12px;
+}
+
+.product-cart__name{
+    font-size: 20px;
+}
+
+.product-cart__composition {
+    list-style-type: circle;
+}
+
+.product-cart__price-wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 20px;
+    margin-bottom: 0;
+}
+
+.product-cart__price-text {
+    font-weight: bold;
+}

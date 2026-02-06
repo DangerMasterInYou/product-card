@@ -6,25 +6,93 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin="anonymous">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="anonymous">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet" crossorigin="anonymous">
+    <link rel="stylesheet" href="/core/ui/styles.css">
     <title>Cards Training</title>
     <meta name="description" content="Увлажняющий мусс глубоко увлажняет кожу лица, оставляя её мягкой и гладкой. Состав: натуральные комплексы, витамины C, A, PP, B, E и солнцезащитные компоненты. Цена: 2 750 ₽.">
 </head>
-<body style="font-family: Montserrat;">
-    <article>
-        <img src="/assets/images/moisturizing_mousse@1x.png" alt="Увлажняющий мусс в бутыльке" width="290" height="245" >
-        <p>ДЛЯ НОРМАЛЬНОЙ КОЖИ</p>
-        <h3>Увлажняющий мусс</h3>
-        <p>Глубоко увлажняет кожу лица, оставляя её мягкой и гладкой.</p>
-        <span>Состав:</span>
-        <ul>
-            <li type="circle">активные натуральные комплексы</li>
-            <li type="circle">витамины C, A, PP, B и E</li>
-            <li type="circle">солнцезащитные компоненты</li>
-        </ul>
-        <div>
-          <span>Цена:</span>
-          <span content="2750">2 750 &#8381</span>
-        </div>
-    </article>
+<body>
+    <span class="title"> Выбери свой продукт </span>
+    <section class="product-cart-wrapper">
+        <article class="product-cart">
+            <img src="/assets/images/moisturizing_mousse@1x.png" alt="Увлажняющий мусс в бутыльке" class="product-cart__image">
+            <p class="product-cart__type-skin">ДЛЯ НОРМАЛЬНОЙ КОЖИ</p>
+            <h3 class="product-cart__name">Увлажняющий мусс</h3>
+            <p class="product-cart__description">Глубоко увлажняет кожу лица, оставляя её мягкой и гладкой.</p>
+            <span class="product-cart__composition-text">Состав:</span>
+            <ul class="product-cart__composition">
+                <li class="product-cart__composition-item">активные натуральные комплексы</li>
+                <li class="product-cart__composition-item">витамины C, A, PP, B и E</li>
+                <li class="product-cart__composition-item">солнцезащитные компоненты</li>
+            </ul>
+            <div class="product-cart__price-wrapper">
+                <span class="product-cart__price-text">Цена</span>
+                <span class="product-cart__price-value">2 750 &#8381</span>
+            </div>
+        </article>
+        <article class="product-cart">
+            <img src="/assets/images/moisturizing_mask@1x.png" alt="Увлажняющая маска" class="product-cart__image">
+            <p class="product-cart__type-skin">ДЛЯ НОРМАЛЬНОЙ КОЖИ</p>
+            <h3 class="product-cart__name">Увлажняющий маска</h3>
+            <p class="product-cart__description">Способствует удерживанию влаги в верхних слоях кожи.</p>
+            <span class="product-cart__composition-text">Состав:</span>
+            <ul class="product-cart__composition">
+                <li class="product-cart__composition-item">воски</li>
+                <li class="product-cart__composition-item">минералы</li>
+                <li class="product-cart__composition-item">масла</li>
+            </ul>
+            <div class="product-cart__price-wrapper">
+                <span class="product-cart__price-text">Цена</span>
+                <span class="product-cart__price-value">3 500 &#8381</span>
+            </div>
+        </article>
+        <article class="product-cart">
+            <img src="assets/images/wash_gel@1x.png" alt="Гель для умывания" class="product-cart__image">
+            <p class="product-cart__type-skin">ДЛЯ НОРМАЛЬНОЙ КОЖИ</p>
+            <h3 class="product-cart__name">Гель для умывания</h3>
+            <p class="product-cart__descr">Интенсивно очищает, не повреждает защитный барьер кожи.</p>
+            <span class="product-cart__composition-text">Состав:</span>
+            <ul class="product-cart__composition">
+                <li class="product-cart__composition-item">минералы</li>
+                <li class="product-cart__composition-item">витамины С, А, РР, В И Е</li>
+                <li class="product-cart__composition-item">солнцезащитные компоненты</li>
+            </ul>
+            <div class="product-cart__price-wrapper">
+                <span class="product-cart__price-text">Цена</span>
+                <span class="product-cart__price-value">1 650 &#8381</span>
+            </div>
+        </article>
+        <article class="product-cart">
+            <img src="assets/images/gift_set_1@1x.png" alt="Подарочный набор №1" class="product-cart__image">
+            <p class="product-cart__type-skin">ДЛЯ НОРМАЛЬНОЙ КОЖИ</p>
+            <h3 class="product-cart__name">Подарочный набор №1</h3>
+            <p class="product-cart__descr">Набор, состоящий из увлажняющего крема и маски.</p>
+            <span class="product-cart__composition-text">Состав:</span>
+            <ul class="product-cart__composition">
+                <li class="product-cart__composition-item">воски</li>
+                <li class="product-cart__composition-item">минералы</li>
+                <li class="product-cart__composition-item">масла</li>
+            </ul>
+            <div class="product-cart__price-wrapper">
+                <span class="product-cart__price-text">Цена</span>
+                <span class="product-cart__price-value">4 750 &#8381</span>
+            </div>
+        </article>
+        <article class="product-cart">
+            <img src="/assets/images/gift_set_5@1x.png" alt="Подарочный набор №5" class="product-cart__image">
+            <p class="product-cart__type-skin">ДЛЯ НОРМАЛЬНОЙ КОЖИ</p>
+            <h3 class="product-cart__name">Подарочный набор №5</h3>
+            <p class="product-cart__descr">Весь набор средств Invisible symphony, крем, маска, мусс и гель для умывания.</p>
+            <span class="product-cart__composition-text">Состав:</span>
+            <ul class="product-cart__composition">
+                <li class="product-cart__composition-item">воски</li>
+                <li class="product-cart__composition-item">минералы</li>
+                <li class="product-cart__composition-item">масла</li>
+            </ul>
+            <div class="product-cart__price-wrapper">
+                <span class="product-cart__price-text">Цена</span>
+                <span class="product-cart__price-value">7 520 &#8381</span>
+            </div>
+        </article>
+    </section>
 </body>
 </html>
