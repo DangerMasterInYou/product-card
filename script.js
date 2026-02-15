@@ -8,25 +8,25 @@ function openLink(link) {
     : console.log(`User cancel redirect to ${link}`);
 }
 
-// Recolor first element cart
-const recolorFirstElCartButton = document.getElementById(
-  "recolor-first-el-cart-button",
+// Recolor first element card
+const recolorFirstElCardButton = document.getElementById(
+  "recolor-first-el-card-button",
 );
-const firstCartElement = document.getElementsByClassName("product-cart")[0];
+const firstCardElement = document.getElementsByClassName("product-card")[0];
 
-recolorFirstElCartButton.addEventListener("click", () =>
-  switchColorOnClick(firstCartElement),
+recolorFirstElCardButton.addEventListener("click", () =>
+  switchColorOnClick(firstCardElement),
 );
 
-// Recolor all element cart
-const recolorAllElCartButton = document.getElementById(
-  "recolor-all-el-cart-button",
+// Recolor all element card
+const recolorAllElCardButton = document.getElementById(
+  "recolor-all-el-card-button",
 );
-const allCartElements = document.getElementsByClassName("product-cart");
+const allCardElements = document.getElementsByClassName("product-card");
 
-recolorAllElCartButton.addEventListener("click", () =>
-  Array.from(allCartElements).forEach((cartElement) =>
-    switchColorOnClick(cartElement),
+recolorAllElCardButton.addEventListener("click", () =>
+  Array.from(allCardElements).forEach((cardElement) =>
+    switchColorOnClick(cardElement),
   ),
 );
 
