@@ -7,7 +7,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="anonymous">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet" crossorigin="anonymous">
     <link rel="stylesheet" href="/core/ui/ui.css">
-    <script src="script.js" defer></script>
+    <script src="/core/scripts/script.js" defer></script>
     <title>Cards Training</title>
     <meta name="description" content="Увлажняющий мусс глубоко увлажняет кожу лица, оставляя её мягкой и гладкой. Состав: натуральные комплексы, витамины C, A, PP, B, E и солнцезащитные компоненты. Цена: 2 750 ₽.">
 </head>
@@ -95,11 +95,34 @@
             </div>
         </article>
     </section>
-    <section class="button_wrapper">
+    <section class="button-wrapper">
         <button id="recolor-first-el-card-button" class="btn">Перекрасить фон первой карточки</button>
         <button id="open-google-button" class="btn">Перейти на страницу Google</button>
         <button id="recolor-all-el-card-button" class="btn">Перекрасить фон всех карточек</button>
         <button id="click-recolor-button" class="btn">Поменять цвет кнопки</button>
+    </section>
+    <section class="tasks-section">
+        <span class="title">Задачи</span>
+        <section class="now-weather-widget">
+            <h4 class="task-description">Создать функцию, которая принимает 2 параметра: город и температуру и выводит сообщение в консоль "Сейчас в X температура  — Y градусов по Цельсию</h4>
+            <input type="text" id="city-input" class="inp" placeholder="Город">
+            <input type="number" id="temperature-input" class="inp" placeholder="Температура (°C)">
+            <button type="submit" id="now-weather-button" class="btn">Отправить</button>
+        </section>
+        <section class="light-speed-widget">
+            <h4 class="task-description">Создать переменную, которая хранит внутри себя скорость света (гуглим). Создать функцию, которая принимает 1 аргумент - скорость, внутри функции происходит проверка: если переданная скорость выше скорости света — выводим лог "Сверхсветовая скорость", если ниже — "Субсветовая  скорость"? если равна — "Скорость света"</h4>
+            <input type="number" id="speed-input" class="inp" placeholder="Скорость">
+            <button type="submit" id="light-speed-button" class="btn">Сравнить</button>
+        </section>
+        <section class="buy-product-widget">
+            <h4 class="task-description">Создать переменную №1, которая содержит продукт и переменную №2, которая содержит его цену (на ваше усмотрение). Далее создаем функцию, которая принимает 1 параметр - текущий бюджет, внутри функции происходит проверка: если бюджет превышает цену товара - выводим лог "(ваше название товара) приобретён. Спасибо за покупку!", если нет - обсчитываем разницу и выводим лог "Вам не хватает X$, пополните баланс".  То-есть с помощью функции мы пытаемся приобрести товар.</h4>
+            <input type="number" id="budget-input" class="inp" placeholder="Бюджет">
+            <button type="submit" id="buy-product-button" class="btn">Купить</button>
+        </section>
+        <section class="sum-digits-widget">
+            <h4 class="task-description">Создать 1 функцию и именовать её по своему усмотрению. Создать 3 переменных (без разницы каких) и именовать их по своему усмотрению</h4>
+            <button type="submit" id="sum-digits-button" class="btn">Суммировать</button>
+        </section>
     </section>
 </body>
 </html>
