@@ -1,13 +1,13 @@
 /*1. Create a function that takes 2 parameters:
 city and temperature and outputs a message to the console "The temperature is currently at X degrees Celsius"
 */
-function currentWeather(city, temperature) {
+function showCurrentWeather(city, temperature) {
   console.log(
     `Сейчас в ${city} температура  — ${temperature} градусов по Цельсию`,
   );
 }
 
-currentWeather("СПб", 20);
+showCurrentWeather("СПб", 20);
 
 /*2. Create a variable that stores the speed of light inside itself (Google).
 Create a function that takes 1 argument - speed, a check is performed inside the function:
@@ -37,12 +37,12 @@ if the budget exceeds the price of the product, we output the log "(your product
 Thanks for the purchase!", if not, we calculate the difference and output the log "You don't have enough X$, top up your balance."
 That is, we are trying to purchase a product using the function.
 */
-const nameProduct = "Macaroni";
+const productName = "Macaroni";
 const price = 500;
 
 function buyProduct(budget) {
   budget >= price
-    ? console.log(`${nameProduct} приобретён. Спасибо за покупку!`)
+    ? console.log(`${productName} приобретён. Спасибо за покупку!`)
     : console.log(`Вам не хватает ${price - budget}$, пополните баланс`);
 }
 

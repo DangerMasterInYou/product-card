@@ -28,16 +28,16 @@ car.owner = person;
 
 // 3. Write a function that will take as an argument the object described in paragraph 4.
 // It checks if there is a "maximum speed" property in the object, if not, adds it and sets the value, if there is, stops execution (does nothing)
-function hasPropertyMaxSpeed(obj) {
+function updateMaxSpeedForCar(obj) {
   if (!Object.hasOwn(obj, "maxSpeed")) {
     obj.maxSpeed = 299792458;
   }
 }
 
-hasPropertyMaxSpeed(car);
+updateMaxSpeedForCar(car);
 
 // 4. Write a function that gets the object as the first argument, and the object's property as the second argument, which needs to be output and outputs its value.
-function getProperty(obj, prop) {
+function getObjectProperty(obj, prop) {
   if (Object.hasOwn(obj, prop)) {
     console.log(obj[prop]);
   }
@@ -134,7 +134,7 @@ const allMovies = [...movies, ...marvelMovies];
 // Write a function that accepts an array of entities from task number 9.
 // We add a new property for the "isRare (this is rare)" object and, depending on the year of the book's release (or some logic related to your entity), set true or false.
 // What I mean by this is: if the book was released later than 2000, set true (yes, it's rare), no - false (so it's not rare).
-function addIsPopularProperty(arr) {
+function setIsPopularPropertyForMovies(arr) {
   return arr.map((el) => ({
     ...el,
     isPopular: Object.hasOwn(el, "rating") ? el.rating > 7 : false,
