@@ -28,7 +28,7 @@ car.owner = person;
 
 // 3. Write a function that will take as an argument the object described in paragraph 4.
 // It checks if there is a "maximum speed" property in the object, if not, adds it and sets the value, if there is, stops execution (does nothing)
-function addMaxSpeedPropertyForCar(obj) {
+function updateMaxSpeedForCar(obj) {
   if (!Object.hasOwn(obj, "maxSpeed")) {
     obj.maxSpeed = 299792458;
   }
