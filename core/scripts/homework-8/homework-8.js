@@ -6,8 +6,7 @@ const productTemplateSection = document.getElementById('product-card-template-wr
 
 renderProductCards(productTemplateSection);
 
-function renderProductCards(parentSectionEl, length = products.length){
-  const productsToRender = products.slice(0, length);
+function renderProductCards(parentSectionEl, productsToRender = products) {
 
   parentSectionEl.innerHTML = '';
 
@@ -17,7 +16,7 @@ function renderProductCards(parentSectionEl, length = products.length){
     console.log(productClone);
 
     const img = productClone.querySelector('.product-card__image');
-    img.setAttribute('src', `/assets/images/${product.imageUrl}`);
+    img.setAttribute('src', `/assets/images/${product.imageUrl}.png`);
     img.setAttribute('alt', product.imageAlt);
 
     productClone.querySelector('.product-card__type-skin').textContent = product.typeSkin;
@@ -50,19 +49,22 @@ console.log(productsLite);
 // That is, we will have 2 functions, one returns the number of cards to be entered, the other is to render these cards (taking the array as an argument)
 const productPromptSection = document.getElementById('product-card-prompt-wrapper');
 
-function getCardCount() {
+function getProductCardCount() {
   let inputCount;
-
   while (true) {
     inputCount = parseInt(prompt('Сколько карточек отобразить? От 1 до 5'), 10);
-
-    if (inputCount != null && !isNaN(inputCount) && 1 <= inputCount && inputCount <= 5) {
-      renderProductCards(productPromptSection, inputCount);
-      return;
+    if (!isNaN(inputCount) && inputCount >= 1 && inputCount <= 5) {
+      return inputCount;
     } else {
       alert('Пожалуйста, введите число от 1 до 5!');
     }
   }
 }
 
-getCardCount();
+function showProductCardMessage() {
+  const cardCount = getProductCardCount();
+  const productsToRender = products.slice(0, cardCount);
+  renderProductCards(productPromptSection, productsToRender);
+}
+
+showProductCardMessage();

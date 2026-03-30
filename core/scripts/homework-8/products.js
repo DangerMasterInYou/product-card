@@ -13,7 +13,7 @@ export const products = [
     ],
     price: 2750,
     currency: '&#8381',
-    imageUrl: 'moisturizing_mousse@1x.png',
+    imageUrl: 'moisturizing_mousse@1x',
     imageAlt: 'Увлажняющий мусс в бутыльке'
   },
   {
@@ -28,7 +28,7 @@ export const products = [
     ],
     price: 3500,
     currency: '&#8381',
-    imageUrl: 'moisturizing_mask@1x.png',
+    imageUrl: 'moisturizing_mask@1x',
     imageAlt: 'Увлажняющая маска'
   },
   {
@@ -43,7 +43,7 @@ export const products = [
     ],
     price: 1650,
     currency: '&#8381',
-    imageUrl: 'wash_gel@1x.png',
+    imageUrl: 'wash_gel@1x',
     imageAlt: 'Гель для умывания'
   },
   {
@@ -58,7 +58,7 @@ export const products = [
     ],
     price: 4750,
     currency: '&#8381',
-    imageUrl: 'gift_set_1@1x.png',
+    imageUrl: 'gift_set_1@1x',
     imageAlt: 'Подарочный набор №1'
   },
   {
@@ -73,7 +73,7 @@ export const products = [
     ],
     price: 7520,
     currency: '&#8381',
-    imageUrl: 'gift_set_5@1x.png',
+    imageUrl: 'gift_set_5@1x',
     imageAlt: 'Подарочный набор №5'
   }
 ];
