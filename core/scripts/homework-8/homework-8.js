@@ -2,12 +2,8 @@ import { products } from "./products.js";
 
 // 3. By analogy from the lecture, create and implement a template for grocery cards.  (Look at task 5 right away)
 const productTemplate = document.getElementById('product-card-template');
-const productTemplateSection = document.getElementById('product-card-template-wrapper');
 
-renderProductCards(productTemplateSection);
-
-function renderProductCards(parentSectionEl, productsToRender = products) {
-
+function renderProductCards(parentSectionEl, productsToRender) {
   parentSectionEl.innerHTML = '';
 
   productsToRender.forEach(product => {
@@ -47,12 +43,11 @@ console.log(productsLite);
 // 5*. Implement a function that, at the start of the page, displays a message (via the prompt function) "How many cards should I display? From 1 to 5" and depending on the result, it will output the entered amount.
 // There must be protection against entering other values (if check).
 // That is, we will have 2 functions, one returns the number of cards to be entered, the other is to render these cards (taking the array as an argument)
-const productPromptSection = document.getElementById('product-card-prompt-wrapper');
+const productSection = document.getElementById('product-card-prompt-wrapper');
 
-function getProductCardCount() {
-  let inputCount;
+function getProductCardsCount() {
   while (true) {
-    inputCount = parseInt(prompt('Сколько карточек отобразить? От 1 до 5'), 10);
+    let inputCount = parseInt(prompt('Сколько карточек отобразить? От 1 до 5'), 10);
     if (!isNaN(inputCount) && inputCount >= 1 && inputCount <= 5) {
       return inputCount;
     } else {
@@ -61,10 +56,10 @@ function getProductCardCount() {
   }
 }
 
-function showProductCardMessage() {
-  const cardCount = getProductCardCount();
+function showProductCards() {
+  const cardCount = getProductCardsCount();
   const productsToRender = products.slice(0, cardCount);
-  renderProductCards(productPromptSection, productsToRender);
+  renderProductCards(productSection, productsToRender);
 }
 
-showProductCardMessage();
+showProductCards();
