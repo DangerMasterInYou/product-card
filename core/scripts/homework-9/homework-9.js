@@ -1,13 +1,16 @@
 // 4. Add logic to the Form attached in the footer:
 // the email must comply with the standards (add validation), if it is not filled out, the form will not be sent.
 // The "Subscribe" button is the "form submission", when clicked, we will output the console log as an object: { email: 'entered mail' }
+let user;
+
 const subscribeForm = document.querySelector("#subscribe-form");
+
 subscribeForm.addEventListener("submit", (event) => {
   event.preventDefault();
   const form = event.target;
   const formData = new FormData(form);
-  const data = Object.fromEntries(formData.entries());
-  console.log(`email: ${data.email}`);
+  user = Object.fromEntries(formData.entries());
+  console.log(user);
   subscribeForm.reset();
 });
 
@@ -46,72 +49,26 @@ closeModalBtn.addEventListener("click", () => hideModal());
 const registrationForm = modal.querySelector(".registration-form");
 registrationForm.addEventListener("submit", (event) => {
   event.preventDefault();
+
   const form = event.target;
+
+  if (!form.checkValidity()) {
+    alert("Исправьте значения полей");
+    return;
+  }
+
   const formData = new FormData(form);
   const data = Object.fromEntries(formData.entries());
-  if (checkValidity(data)) {
-    data.createOn = new Date();
-    console.log(`Пользователь создан в : ${data.createOn}`);
-  };
 
+  if (data.password !== data.passwordRepeat) {
+    alert("Пароли не совпадают");
+    return;
+  }
 
+  data.createdOn = new Date();
+  user = data;
+
+  console.log(user);
+  form.reset();
+  hideModal();
 });
-
-function isCapitalized(str) {
-  return /^[A-ZА-ЯЁ][a-zа-яё]*$/.test(str);
-}
-
-function isLoginValid(str) {
-  return /^[A-Za-z0-9]+$/.test(str);
-}
-
-function getAge(birthday) {
-  if (!birthday) return NaN;
-  birthday = new Date(birthday);
-
-  const now = new Date();
-  let age = now.getFullYear() - birthday.getFullYear();
-
-  return age;
-}
-
-function checkValidity(data) {
-  const name = data.name;
-  const surname = data.surname;
-  const birthday = data.birthday;
-  const login = data.login;
-  const password = data.password;
-  const passwordRepeat = data.passwordRepeat;
-
-  if (!isCapitalized(name)) {
-    alert("Испарвьте значения полей")
-    return false;
-  }
-  else if (!isCapitalized(surname)) {
-    alert("Испарвьте значения полей")
-    return false;
-  }
-  else if (getAge(birthday) <= 14) {
-    alert("Испарвьте значения полей")
-    return false;
-  }
-  else if (!isLoginValid(login)) {
-    alert("Испарвьте значения полей")
-    return false;
-  }
-  else if (password.length < 6 && password !== passwordRepeat) {
-    alert("Испарвьте значения полей")
-    return false;
-  }
-  else {
-    console.log(`
-      name: ${data.name},
-      surname: ${data.surname},
-      birthday: ${data.birthday},
-      login: ${data.login},
-      password: ${data.password},
-      passwordRepeat: ${data.passwordRepeat}
-      `);
-    return true;
-  }
-}
