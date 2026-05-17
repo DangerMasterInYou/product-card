@@ -6,13 +6,13 @@ import { Modal } from "../homework-10/Modal.js";
 // The "Subscribe" button is the "form submission", when clicked, we will output the console log as an object: { email: 'entered mail' }
 let user;
 
-const subscribeForm = document.querySelector("#subscribe-form");
+const subscribeForm = new Form("subscribe-form");
 
 subscribeForm.addEventListener("submit", (event) => {
   event.preventDefault();
-  const form = event.target;
-  const formData = new FormData(form);
-  user = Object.fromEntries(formData.entries());
+
+  user = subscribeForm.getValues();
+
   console.log(user);
   subscribeForm.reset();
 });

@@ -37,11 +37,10 @@ export class Modal {
         }
     }
 
-    outputState() {
+    isOpen() {
         this.#updateEl();
         if (this.modalEl) {
-            let msg = this.modalEl.classList.contains("modal-showed") ? "Открыто" : "Закрыто";
-            console.log(msg);
+            return this.modalEl.classList.contains("modal-showed");
         } else {
             console.trace()
         }
