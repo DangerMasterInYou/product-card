@@ -36,11 +36,11 @@ const googleOpenButton = document.getElementById("open-google-button");
 googleOpenButton.addEventListener("click", () => openLink("google.com"));
 
 // Text title output to the console
-const titleElement = document.getElementsByClassName("title")[0];
+// const titleElement = document.getElementsByClassName("title")[0];
 
-titleElement.addEventListener("mouseover", () =>
-  console.log(titleElement.textContent),
-);
+// titleElement.addEventListener("mouseover", () =>
+//   console.log(titleElement.textContent),
+// );
 
 // Recolor button when pressed
 const clickRecolorButton = document.getElementById("click-recolor-button");

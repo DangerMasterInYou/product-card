@@ -1,3 +1,6 @@
+import { Form } from "../homework-10/Form.js";
+import { Modal } from "../homework-10/Modal.js";
+
 // 4. Add logic to the Form attached in the footer:
 // the email must comply with the standards (add validation), if it is not filled out, the form will not be sent.
 // The "Subscribe" button is the "form submission", when clicked, we will output the console log as an object: { email: 'entered mail' }
@@ -21,21 +24,16 @@ subscribeForm.addEventListener("submit", (event) => {
 // 1) The background should be darkened, but not completely black (Creating an overlay class that will darken the entire page)
 // 2) The modal window is located exactly in the center of the page, regardless of the scale
 const modalBtn = document.querySelector(".modal-btn");
-const modal = document.querySelector(".modal");
-const overlay = modal.querySelector(".overlay");
+const modal = new Modal('registration-modal');
+const overlay = modal.modalEl.querySelector(".overlay");
 const closeModalBtn = document.querySelector(".close-modal-btn");
 
 modalBtn.addEventListener("click", () => {
-  console.log(`Show modal`);
-  modal.classList.add("modal-showed");
+  modal.open();
 });
 
-function hideModal() {
-  modal.classList.remove("modal-showed");
-}
-
-overlay.addEventListener("click", () => hideModal());
-closeModalBtn.addEventListener("click", () => hideModal());
+overlay.addEventListener("click", () => modal.close());
+closeModalBtn.addEventListener("click", () => modal.close());
 
 // 6. Create a registration form inside the modal window.
 // It should contain the fields: first name, last name, date of birth, login, password, password repetition.
@@ -46,29 +44,21 @@ closeModalBtn.addEventListener("click", () => hideModal());
 // If registration is successful, we output the form values to the log, as in task No. 4.
 // Additionally, we need to add the CreatedOn property to this object and specify the creation time there (using the new Date() entity).
 // Also create an external user variable and assign this object to it. After successful registration, the modal must be closed.
-const registrationForm = modal.querySelector(".registration-form");
-registrationForm.addEventListener("submit", (event) => {
+const registrationForm = new Form("registration-form");
+(registrationForm.formEl).addEventListener("submit", (event) => {
   event.preventDefault();
 
-  const form = event.target;
-
-  if (!form.checkValidity()) {
+  if (!registrationForm.isValid()) {
     alert("Исправьте значения полей");
     return;
   }
 
-  const formData = new FormData(form);
-  const data = Object.fromEntries(formData.entries());
-
-  if (data.password !== data.passwordRepeat) {
-    alert("Пароли не совпадают");
-    return;
-  }
-
+  let data = registrationForm.getValues();
   data.createdOn = new Date();
+  delete data.passwordRepeat;
   user = data;
 
   console.log(user);
-  form.reset();
-  hideModal();
+  registrationForm.reset();
+  modal.close();
 });
