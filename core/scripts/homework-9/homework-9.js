@@ -8,7 +8,7 @@ let user;
 
 const subscribeForm = new Form("subscribe-form");
 
-subscribeForm.addEventListener("submit", (event) => {
+subscribeForm.formEl.addEventListener("submit", (event) => {
   event.preventDefault();
 
   user = subscribeForm.getValues();
@@ -24,7 +24,7 @@ subscribeForm.addEventListener("submit", (event) => {
 // 1) The background should be darkened, but not completely black (Creating an overlay class that will darken the entire page)
 // 2) The modal window is located exactly in the center of the page, regardless of the scale
 const modalBtn = document.querySelector(".modal-btn");
-const modal = new Modal('registration-modal');
+const modal = new Modal("registration-modal");
 const overlay = modal.modalEl.querySelector(".overlay");
 const closeModalBtn = document.querySelector(".close-modal-btn");
 
@@ -45,7 +45,7 @@ closeModalBtn.addEventListener("click", () => modal.close());
 // Additionally, we need to add the CreatedOn property to this object and specify the creation time there (using the new Date() entity).
 // Also create an external user variable and assign this object to it. After successful registration, the modal must be closed.
 const registrationForm = new Form("registration-form");
-(registrationForm.formEl).addEventListener("submit", (event) => {
+registrationForm.formEl.addEventListener("submit", (event) => {
   event.preventDefault();
 
   if (!registrationForm.isValid()) {
