@@ -12,7 +12,7 @@ export class Drink {
     this.#temperature = temperature;
   }
 
-  toJSON() {
+  getDrinkInfo() {
     return {
       name: this.name,
       size: this.size,
@@ -45,9 +45,9 @@ export class Coffee extends Drink {
     this.typeGrain = typeGrain;
   }
 
-  toJSON() {
+  getCoffeeInfo() {
     return {
-      ...super.toJSON(),
+      ...super.getDrinkInfo(),
       typeGrain: this.typeGrain,
     };
   }
@@ -60,9 +60,9 @@ export class Tea extends Drink {
     this.typeHerb = typeHerb;
   }
 
-  toJSON() {
+  getTeaInfo() {
     return {
-      ...super.toJSON(),
+      ...super.getDrinkInfo(),
       typeHerb: this.typeHerb,
     };
   }
@@ -75,9 +75,9 @@ export class NoTea extends Drink {
     this.typeBerry = typeBerry;
   }
 
-  toJSON() {
+  getNoTeaInfo() {
     return {
-      ...super.toJSON(),
+      ...super.getDrinkInfo(),
       typeBerry: this.typeBerry,
     };
   }
