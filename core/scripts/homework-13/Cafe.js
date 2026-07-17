@@ -6,7 +6,7 @@ export class Cafe {
     this.location = location;
   }
 
-  toJSON() {
+  getCafeInfo() {
     return {
       name: this.name,
       location: this.location,
