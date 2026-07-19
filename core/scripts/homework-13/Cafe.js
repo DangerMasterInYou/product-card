@@ -6,15 +6,11 @@ export class Cafe {
     this.location = location;
   }
 
-  getValuesToJSON() {
+  getCafeInfo() {
     return {
       name: this.name,
       location: this.location,
     };
-  }
-
-  toJSON() {
-    return this.getValuesToJSON();
   }
 
   orderDrink(drink) {
