@@ -1,0 +1,79 @@
+<!doctype html>
+<html lang="ru">
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title></title>
+    <meta name="description" content="" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="" />
+    <style>
+      body {
+        font-family: sans-serif;
+        padding: 20px;
+      }
+      .btn-wrapper {
+        margin-bottom: 20px;
+        display: flex;
+        gap: 10px;
+        flex-wrap: wrap;
+        justify-content: center;
+      }
+      button {
+        padding: 10px 15px;
+        cursor: pointer;
+        background: #333;
+        color: white;
+        border: none;
+      }
+      button:hover {
+        background: #555;
+      }
+
+      #user-card-wrapper {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 20px;
+        justify-content: center;
+      }
+      .user-card {
+        border: 1px solid #ccc;
+        padding: 15px;
+        width: 250px;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        background: #f9f9f9;
+      }
+      .hero {
+        text-align: center;
+        margin-bottom: 30px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="hero">
+      <h2 class="title"></h2>
+      <section id="user-card-wrapper"></section>
+    </div>
+    <div class="btn-wrapper">
+      <button id="btn-get-all">📥 Получить всех пользователей</button>
+      <button id="btn-delete-all">🗑 Удалить все карточки</button>
+    </div>
+
+    <template id="user-card-template">
+      <article class="user-card">
+        <h3 class="user-card__name"></h3>
+        <h3 class="user-card__surname"></h3>
+        <p class="user-card__email"></p>
+        <p class="user-card__age"></p>
+        <p class="user-card__city"></p>
+        <p class="user-card__active"></p>
+        <button class="btn-remove">Удалить эту карточку</button>
+      </article>
+    </template>
+
+    <script
+      type="module"
+      src="/core/scripts/homework-15/async/async.js"
+    ></script>
+  </body>
+</html>
