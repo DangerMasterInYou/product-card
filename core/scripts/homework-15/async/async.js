@@ -1,23 +1,16 @@
-class User {
-  constructor(name, surname, email, age, city, is_active) {
-    this.name = name;
-    this.surname = surname;
-    this.email = email;
-    this.age = age;
-    this.city = city;
-    this.is_active = is_active;
-  }
+function isUser(obj) {
+  const requiredFields = [
+    "name",
+    "surname",
+    "email",
+    "age",
+    "city",
+    "is_active",
+  ];
 
-  static toUser(obj) {
-    return new User(
-      obj.name,
-      obj.surname,
-      obj.email,
-      obj.age,
-      obj.city,
-      obj.is_active,
-    );
-  }
+  return requiredFields.every((field) => {
+    return obj.hasOwn(field);
+  });
 }
 
 function delay(ms) {
@@ -25,14 +18,14 @@ function delay(ms) {
 }
 
 function removeUser(email) {
-  var data = JSON.parse(localStorage.getItem("users"));
+  const data = JSON.parse(localStorage.getItem("users"));
   const filteredData = data.filter((user) => {
     return user.email != email;
   });
   localStorage.setItem("users", JSON.stringify(filteredData));
 
-  data = JSON.parse(localStorage.getItem("users"));
-  renderUserCards(userCardWrapper, data);
+  const newData = JSON.parse(localStorage.getItem("users"));
+  renderUserCards(userCardWrapper, newData);
 }
 
 async function fetchData() {
@@ -40,7 +33,9 @@ async function fetchData() {
   if (!response.ok) throw new Error(`Ошибка чтения json! ${response.status}`);
   const data = (await response.json()).users;
   data.forEach((user) => {
-    User.toUser(user);
+    if (!isUser(user)) {
+      throw new Error(`ОбЪект не является user! ${user}`);
+    }
   });
   localStorage.setItem("users", JSON.stringify(data));
 }
